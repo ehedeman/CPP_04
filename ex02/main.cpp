@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:10:44 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 12:40:05 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/27 12:57:39 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main()
 {
+	// Animal a(); //this is not possible if u try because its abstract now
 	{
 		Animal	*animals[4];
 	
