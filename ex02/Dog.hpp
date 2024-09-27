@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:12:55 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 12:01:57 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:10:35 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 					~Dog();							//Deconstructor
 	Dog				&operator=( const Dog &copy);	//Assignment Operator
 	
-	Brain			*getBrain();
+	Brain	const	*getBrain();
 	//subject specific functions
 	void			makeSound( void )const;
 };

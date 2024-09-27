@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:12:41 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 12:56:35 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:11:09 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@
 class Animal
 {
 protected:
-	std::string				type;
+	std::string					type;
 public:
-							Animal( void );						//Default Constructor
-							Animal( const Animal &copy);				//Copy-Constructor
+								Animal( void );						//Default Constructor
+								Animal( const Animal &copy);				//Copy-Constructor
 
-	virtual					~Animal();							//Deconstructor
-	Animal					&operator=( const Animal &copy);	//Assignment Operator
+	virtual						~Animal();							//Deconstructor
+	Animal						&operator=( const Animal &copy);	//Assignment Operator
 	
 	//get-/set/functions
-	virtual void			setType( std::string _type );
-	virtual std::string		getType( void ) const;
+	virtual void				setType( std::string _type );
+	virtual std::string	const	getType( void ) const;
 	
 	//subject specific functions
-	virtual void			makeSound( void)const = 0;
+	virtual void				makeSound( void)const = 0;
 };

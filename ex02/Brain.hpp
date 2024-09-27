@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 11:39:27 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 12:34:18 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:10:52 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ private:
 	
 public:
 
-				Brain();
-				~Brain();
-				Brain(const Brain &copy);
-	Brain		&operator=(const Brain &copy);
+					Brain();
+					~Brain();
+					Brain(const Brain &copy);
+	Brain			&operator=(const Brain &copy);
 	
-	std::string	getIdea(int index);
-	void		setIdea(std::string idea, int index);
+	std::string	const	getIdea(int index);
+	void				setIdea(std::string idea, int index);
 	
 	void		printIdeas();
 };

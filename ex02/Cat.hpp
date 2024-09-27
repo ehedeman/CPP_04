@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:12:48 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 12:01:51 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:10:43 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 					~Cat();							//Deconstructor
 	Cat				&operator=( const Cat &copy);	//Assignment Operator
 	
-	Brain			*getBrain();
+	Brain	const	*getBrain();
 	//subject specific functions
 	void			makeSound( void ) const;
 };
