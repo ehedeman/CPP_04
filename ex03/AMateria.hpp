@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:02:19 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 13:22:09 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:38:00 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
 
 class AMateria
 {

@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:15:11 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 13:33:54 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:41:36 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class ICharacter
 private:
 	AMateria *inventory[4];
 public:
-	public:
 	virtual ~ICharacter() {}
 	virtual std::string const & getName() const = 0;
 	virtual void equip(AMateria* m) = 0;
