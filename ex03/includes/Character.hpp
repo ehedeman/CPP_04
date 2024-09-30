@@ -6,13 +6,12 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 14:50:41 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 15:07:45 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:01:00 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ICharacter.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
+#include "MarteriaTypes.hpp"
 
 class Character: public ICharacter
 {

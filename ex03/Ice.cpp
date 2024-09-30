@@ -6,11 +6,11 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:17:00 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 15:33:14 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:03:31 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "includes/Ice.hpp"
 
 Ice::Ice(/* args */): AMateria("ice")
 {
@@ -18,7 +18,7 @@ Ice::Ice(/* args */): AMateria("ice")
 	this->demage = 5;
 }
 
-Ice::Ice(const Ice &copy)
+Ice::Ice(const Ice &copy): AMateria(copy)
 {
 	*this = copy;
 }

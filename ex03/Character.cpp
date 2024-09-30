@@ -10,20 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "includes/Character.hpp"
 
 Character::Character( void ): ICharacter()
 {
+	std::cout << "Character constructor." << std::endl;
 	this->HP = 100;
 	this->MP = 50;
 	this->name = "default";
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
-	
 }
 
 Character::Character(std::string _name): ICharacter()
 {
+	std::cout << "Character name constructor." << std::endl;
 	this->HP = 100;
 	this->MP = 50;
 	this->name = _name;
@@ -33,6 +34,7 @@ Character::Character(std::string _name): ICharacter()
 
 Character::Character(const Character &copy): ICharacter(copy)
 {
+	std::cout << "Character copy constructor." << std::endl;
 	*this = copy;
 }
 
@@ -40,9 +42,15 @@ Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
 	{
+		if (!this->inventory[i])
+			continue;
 		if (this->inventory[i])
+		{
 			delete(this->inventory[i]);
+			this->inventory[i] = NULL;
+		}
 	}
+	std::cout << "Character deconstructor." << std::endl;
 }
 
 Character		&Character::operator=(const Character &copy)
@@ -54,16 +62,18 @@ Character		&Character::operator=(const Character &copy)
 		this->MP = copy.MP;
 		for (int i = 0; i < 4; i++)
 		{
+			if (this->inventory[i])
+			{
+				delete(this->inventory[i]);
+				this->inventory[i] = NULL;
+			}
 			if (copy.inventory[i])
 			{
 				if (copy.inventory[i]->getType() == "ice")
 					this->inventory[i] = new Ice();
 				else if (copy.inventory[i]->getType() == "cure")
 					this->inventory[i] = new Cure();
-				delete(copy.inventory[i]);
 			}
-			else
-				this->inventory[i] = NULL;
 		}
 	}
 	return (*this);
@@ -73,6 +83,10 @@ std::string	const	&Character::getName() const {return(this->name);}
 
 void				Character::equip(AMateria *m)
 {
+	if (!m)
+	{
+		std::cout << "Oh? The materia doesnt seem to exist.." << std::endl;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (!this->inventory[i])
@@ -104,6 +118,6 @@ void			Character::use(int idx, ICharacter &target)
 		std::cout << "But oh no! There is no Marteria to use on that slot!" << std::endl;
 		return ;
 	}
-	std::cout << this->name << " uses " << this->inventory[idx] <<
+	std::cout << this->name << " uses " << this->inventory[idx]->getType() <<
 	" against " << target.getName() << "!" << std::endl;
 }

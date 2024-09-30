@@ -6,34 +6,38 @@
 #    By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 14:05:52 by ehedeman          #+#    #+#              #
-#    Updated: 2024/09/27 13:01:40 by ehedeman         ###   ########.fr        #
+#    Updated: 2024/09/30 12:53:24 by ehedeman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC = main.cpp			\
-		AMateria.cpp
+SRC = main.cpp				\
+		AMateria.cpp		\
+		Character.cpp		\
+		Cure.cpp			\
+		Ice.cpp				\
+		MateriaSource.cpp
 
 OBJS_DIR = objs/
 OBJS = $(SRC:.cpp=.o)
 OBJS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
-HEADERS = AMateria.hpp
+HEADERS = /includes
 CXX = c++
 #cxx can be left undefined but then it uses g++ and not c++ as required by subject
 RM = rm -rf
 MKDIR = mkdir -p
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = Zoo
+NAME = Materia
 
 all: $(NAME)
 
 $(NAME): $(OBJS_PREFIXED)
 	$(CXX) $(CXXFLAGS) $(OBJS_PREFIXED) -o $(NAME)
 
-$(OBJS_DIR)%.o : %.cpp $(HEADERS)
+$(OBJS_DIR)%.o : %.cpp
 	$(MKDIR) $(OBJS_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -I$(HEADERS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS_DIR)

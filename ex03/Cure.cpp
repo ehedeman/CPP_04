@@ -6,11 +6,11 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:16:42 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 15:34:45 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:03:28 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "includes/Cure.hpp"
 
 Cure::Cure(/* args */): AMateria("cure")
 {
@@ -18,7 +18,7 @@ Cure::Cure(/* args */): AMateria("cure")
 	this->hp_restore = 5;
 }
 
-Cure::Cure(const Cure &copy)
+Cure::Cure(const Cure &copy): AMateria(copy)
 {
 	*this = copy;
 }
