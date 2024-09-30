@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:12:35 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 12:54:25 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:26:02 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ Animal		&Animal::operator=( const Animal &copy )
 	return (*this);
 }
 
-std::string		Animal::getType( void ) const {return (this->type);}
+std::string		const Animal::getType( void ) const {return (this->type);}
 void			Animal::setType( std::string _type){this->type = _type;}
 

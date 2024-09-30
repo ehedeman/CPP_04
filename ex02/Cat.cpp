@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:12:44 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 12:28:09 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:41:30 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,22 @@ void	Cat::makeSound( void )const
 	std::cout << "meow" << std::endl;
 }
 
-Brain	*Cat::getBrain( void ){return(this->brain);}
+const Brain	*Cat::getBrain( void ){return(this->brain);}
+
+std::string const	Cat::getIdea( int index )const{return(this->brain->getIdeas()[index]);}
+void				Cat::setIdea( std::string idea, int index)
+{
+	if (index < 100)
+		this->brain->getIdeas()[index] = idea;
+	else
+		std::cerr << "Too large number." << std::endl;
+}
+
+void		Cat::printIdeas( void )const
+{
+	for (int i = 0; i < 100; i++)
+	{
+		if (this->brain->getIdeas()[i] != "")
+			std::cout << this->brain->getIdeas()[i] << std::endl;
+	}
+}

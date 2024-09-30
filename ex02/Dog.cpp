@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:12:52 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 12:27:52 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:40:10 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,22 @@ void	Dog::makeSound( void ) const
 	std::cout << "woof" << std::endl;
 }
 
-Brain	*Dog::getBrain( void ){return(this->brain);}
+const Brain	*Dog::getBrain( void ){return(this->brain);}
+
+std::string const	Dog::getIdea( int index )const{return(this->brain->getIdeas()[index]);}
+void				Dog::setIdea( std::string idea, int index)
+{
+	if (index < 100)
+		this->brain->getIdeas()[index] = idea;
+	else
+		std::cerr << "Too large number." << std::endl;
+}
+
+void		Dog::printIdeas( void )const
+{
+	for (int i = 0; i < 100; i++)
+	{
+		if (this->brain->getIdeas()[i] != "")
+			std::cout << this->brain->getIdeas()[i] << std::endl;
+	}
+}

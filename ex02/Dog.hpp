@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:12:55 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 13:10:35 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:36:37 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,18 @@
 class Dog : public Animal
 {
 private:
-	class Brain *brain;
+	Brain *brain;
 public:
-					Dog();						//Default Constructor
-					Dog( const Dog &copy);				//Copy-Constructor
-					~Dog();							//Deconstructor
-	Dog				&operator=( const Dog &copy);	//Assignment Operator
+						Dog();						//Default Constructor
+						Dog( const Dog &copy);				//Copy-Constructor
+						~Dog();							//Deconstructor
+	Dog					&operator=( const Dog &copy);	//Assignment Operator
 	
-	Brain	const	*getBrain();
+	Brain	const		*getBrain();
 	//subject specific functions
-	void			makeSound( void )const;
+	void				makeSound( void )const;
+	std::string	const	getIdea(int index)const;
+	void				setIdea( std::string idea, int index);
+	
+	void				printIdeas()const;
 };

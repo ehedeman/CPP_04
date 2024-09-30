@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 11:39:38 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 12:36:17 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:41:36 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,17 @@ Brain		&Brain::operator=(const Brain &copy)
 	return (*this);
 }
 
-std::string	Brain::getIdea( int index ){return(this->ideas[index]);}
-void		Brain::setIdea( std::string idea, int index){this->ideas[index] = idea;}
+std::string const	Brain::getIdea( int index )const{return(this->ideas[index]);}
+std::string			*Brain::getIdeas(){return (this->ideas);}
+void				Brain::setIdea( std::string idea, int index)
+{
+	if (index < 100)
+		this->ideas[index] = idea;
+	else
+		std::cerr << "Too large number." << std::endl;
+}
 
-void		Brain::printIdeas( void )
+void		Brain::printIdeas( void )const
 {
 	for (int i = 0; i < 100; i++)
 	{
