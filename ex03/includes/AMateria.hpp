@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:02:19 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/30 13:06:22 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:18:40 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
+
+//abstract class for the Ice and Cure type Materias
 
 class AMateria
 {

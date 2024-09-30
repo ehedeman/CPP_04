@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:16:42 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/30 14:03:28 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 15:11:04 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,25 @@
 
 Cure::Cure(/* args */): AMateria("cure")
 {
+	std::cout << "Cure constructor." << std::endl;
 	this->mana_usage = 10;
 	this->hp_restore = 5;
 }
 
 Cure::Cure(const Cure &copy): AMateria(copy)
 {
+	std::cout << "Cure copy constructor." << std::endl;
 	*this = copy;
 }
 
 Cure::~Cure()
 {
+	std::cout << "Cure deconstructor." << std::endl;
 }
 
 Cure		&Cure::operator=(const Cure &copy)
 {
+	std::cout << "Cure Assignment operator." << std::endl;
 	if (this != &copy)
 	{
 		this->hp_restore = copy.hp_restore;
@@ -45,8 +49,8 @@ void		Cure::use(ICharacter& target)
 
 AMateria	*Cure::clone() const
 {
-	AMateria *mate = new Cure();
-	return (mate);
+//	AMateria *mate = new Cure();
+	return (new Cure);
 }
 
 int			Cure::getHP_res(){return(this->hp_restore);}

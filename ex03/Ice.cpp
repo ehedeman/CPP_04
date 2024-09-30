@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:17:00 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/30 14:03:31 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 15:10:59 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,25 @@
 
 Ice::Ice(/* args */): AMateria("ice")
 {
+	std::cout << "Ice constructor." << std::endl;
 	this->mana_usage = 10;
 	this->demage = 5;
 }
 
 Ice::Ice(const Ice &copy): AMateria(copy)
 {
+	std::cout << "Ice copy constructor." << std::endl;
 	*this = copy;
 }
 
 Ice::~Ice()
 {
+	std::cout << "Ice deconstructor." << std::endl;
 }
 
 Ice		&Ice::operator=(const Ice &copy)
 {
+	std::cout << "Ice Assignment operator." << std::endl;
 	if (this != &copy)
 	{
 		this->demage = copy.demage;
@@ -45,8 +49,8 @@ void		Ice::use(ICharacter& target)
 
 AMateria	*Ice::clone() const
 {
-	AMateria *mate = new Ice();
-	return (mate);
+	//AMateria *mate = new Ice();
+	return (new Ice);
 }
 
 int			Ice::getDemage(){return(this->demage);}

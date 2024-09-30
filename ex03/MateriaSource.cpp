@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:56:14 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/30 14:07:42 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:29:16 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ MateriaSource::~MateriaSource()
 
 MateriaSource	&MateriaSource::operator=(const MateriaSource &copy)
 {
+	std::cout << "MateriaSource Assignment operator." << std::endl;
 	if (this != &copy)
 	{
 		for (int i = 0; i < 4; i++)
@@ -67,10 +68,17 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &copy)
 
 void			MateriaSource::learnMateria(AMateria *ptr)
 {
+	std::cout << "Trying to learn a new Materia.." << std::endl;
+	if (!ptr)
+	{
+		std::cout << "There's no new Materia to learn.." << std::endl;
+		return ;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (!this->learned[i])
 		{
+			std::cout << "New Materia has been learned!" << std::endl;
 			this->learned[i] = ptr;
 			return ;
 		}

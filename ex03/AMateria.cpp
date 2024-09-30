@@ -6,27 +6,36 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:02:09 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/30 12:54:13 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:24:07 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/AMateria.hpp"
 
-AMateria::AMateria( void ):type("default"){}
+AMateria::AMateria( void ):type("default")
+{
+	std::cout << "AMateria constructor." << std::endl;
+}
 
-AMateria::AMateria(std::string const &_type):type(_type){}
+AMateria::AMateria(std::string const &_type):type(_type)
+{
+	std::cout << "AMateria type constructor." << std::endl;
+}
 
 AMateria::AMateria(const AMateria &copy)
 {
+	std::cout << "AMateria copy constructor." << std::endl;
 	*this = copy;
 }
 
 AMateria::~AMateria()
 {
+	std::cout << "AMateria deconstructor." << std::endl;
 }
 
 AMateria        &AMateria::operator=(const AMateria &copy)
 {
+	std::cout << "AMateria Assignment operator." << std::endl;
 	if (this != &copy)
 		this->type = copy.type;
 	return (*this);

@@ -35,6 +35,8 @@ Character::Character(std::string _name): ICharacter()
 Character::Character(const Character &copy): ICharacter(copy)
 {
 	std::cout << "Character copy constructor." << std::endl;
+	for (int i = 0; i < 4; i++)
+		this->inventory[i] = NULL;
 	*this = copy;
 }
 
@@ -57,25 +59,21 @@ Character		&Character::operator=(const Character &copy)
 {
 	if (this != &copy)
 	{
-		this->name = copy.name;
+		this->name = copy.name + "_clone";
 		this->HP = copy.HP;
 		this->MP = copy.MP;
 		for (int i = 0; i < 4; i++)
 		{
-			if (this->inventory[i])
+			if (this->inventory[i] != NULL)
 			{
 				delete(this->inventory[i]);
 				this->inventory[i] = NULL;
 			}
 			if (copy.inventory[i])
-			{
-				if (copy.inventory[i]->getType() == "ice")
-					this->inventory[i] = new Ice();
-				else if (copy.inventory[i]->getType() == "cure")
-					this->inventory[i] = new Cure();
-			}
+				this->inventory[i] = copy.inventory[i]->clone();
 		}
 	}
+	std::cout << "Character Assignment operator." << std::endl;
 	return (*this);
 }
 
@@ -91,6 +89,7 @@ void				Character::equip(AMateria *m)
 	{
 		if (!this->inventory[i])
 		{
+			std::cout << "The Materia has been equipped!" << std::endl;
 			this->inventory[i] = m;
 			return ;
 		}
