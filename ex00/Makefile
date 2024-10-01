@@ -6,7 +6,7 @@
 #    By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 14:05:52 by ehedeman          #+#    #+#              #
-#    Updated: 2024/09/25 14:54:56 by ehedeman         ###   ########.fr        #
+#    Updated: 2024/10/01 12:07:28 by ehedeman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,14 @@
 SRC = main.cpp			\
 		Animal.cpp		\
 		Dog.cpp			\
-		Cat.cpp
+		Cat.cpp			\
+		WrongAnimal.cpp	\
+		WrongCat.cpp
 
 OBJS_DIR = objs/
 OBJS = $(SRC:.cpp=.o)
 OBJS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
-HEADERS = Animal.hpp Dog.hpp Cat.hpp
+HEADERS = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.cpp
 CXX = c++
 #cxx can be left undefined but then it uses g++ and not c++ as required by subject
 RM = rm -rf

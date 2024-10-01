@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 14:12:41 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/10/01 12:03:52 by ehedeman         ###   ########.fr       */
+/*   Created: 2024/10/01 12:02:02 by ehedeman          #+#    #+#             */
+/*   Updated: 2024/10/01 12:06:58 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "WrongAnimal.hpp"
 
-class Animal
+class WrongCat : public WrongAnimal
 {
-protected:
-	std::string				type;
-public:
-							Animal( void );						//Default Constructor
-							Animal( const Animal &copy);		//Copy-Constructor
-
-	virtual					~Animal();							//Deconstructor
-	Animal					&operator=( const Animal &copy);	//Assignment Operator
+private:
 	
-	//get-/set/functions
-	void					setType( std::string _type );
-	std::string		const	getType( void ) const;
+public:
+					WrongCat();									//Default Constructor
+					WrongCat( const WrongCat &copy);			//Copy-Constructor
+					~WrongCat();								//Deconstructor
+	WrongCat		&operator=( const WrongCat &copy);			//Assignment Operator
 	
 	//subject specific functions
-	virtual void			makeSound( void )const;
 };
+
+
