@@ -112,11 +112,10 @@ void			Character::use(int idx, ICharacter &target)
 {
 	if (!this->inventory[idx])
 	{
-		std::cout << this->name << " tries to use a Materia " <<
-		" against " << target.getName() << "!" << std::endl;
+		std::cout << this->name << " tries to use a Materia against " << 
+		target.getName() << "!" << std::endl;
 		std::cout << "But oh no! There is no Marteria to use on that slot!" << std::endl;
 		return ;
 	}
-	std::cout << this->name << " uses " << this->inventory[idx]->getType() <<
-	" against " << target.getName() << "!" << std::endl;
+	this->inventory[idx]->use(target);
 }
