@@ -6,7 +6,7 @@
 /*   By: ehedeman <ehedeman@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 11:39:38 by ehedeman          #+#    #+#             */
-/*   Updated: 2024/09/27 12:36:17 by ehedeman         ###   ########.fr       */
+/*   Updated: 2024/10/01 12:19:41 by ehedeman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Brain::~Brain()
 	std::cout << "Brain Deonstructor called." << std::endl;
 }
 
-Brain		&Brain::operator=(const Brain &copy)
+Brain				&Brain::operator=(const Brain &copy)
 {
 	std::cout << "Brain Assignment Operator called." << std::endl;
 	if (&copy != this)
@@ -46,10 +46,10 @@ Brain		&Brain::operator=(const Brain &copy)
 	return (*this);
 }
 
-std::string	Brain::getIdea( int index ){return(this->ideas[index]);}
-void		Brain::setIdea( std::string idea, int index){this->ideas[index] = idea;}
+std::string	const	Brain::getIdea( int index ){return(this->ideas[index]);}
+void				Brain::setIdea( std::string idea, int index){this->ideas[index] = idea;}
 
-void		Brain::printIdeas( void )
+void				Brain::printIdeas( void )
 {
 	for (int i = 0; i < 100; i++)
 	{
